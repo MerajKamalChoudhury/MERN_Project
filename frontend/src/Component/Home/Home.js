@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Loader from "../Layout/Loader/Loader";
 import { useAlert } from "react-alert";
 
+
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ const Home = () => {
       ) : (
         <Fragment>
           <MetaData title="ECOMMERCE" />
+          
 
           <div className="banner">
             <p>Welcome to OJ FASHION</p>

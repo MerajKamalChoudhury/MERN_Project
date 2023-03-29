@@ -115,8 +115,7 @@ const ProductDetails = () => {
                 {product.images &&
                   product.images.map((item, i) => (
                     <img
-                      className="CarouselImage" style={{width: "20vmax", 
-                        height: "414px"}}
+                      className="CarouselImage"
                       
                       key={i}
                       src={item.url}

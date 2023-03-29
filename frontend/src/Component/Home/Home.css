@@ -1,5 +1,5 @@
 .banner {
-    background-image: url("../../images/cover.jfif");
+    background-image: url("../../images/SliderImage1.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,7 +34,7 @@
     font: 500 1vmax "Roboto";
   }
   .banner > a > button:hover {
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(51, 231, 222, 0.849);
     color: white;
   }
   

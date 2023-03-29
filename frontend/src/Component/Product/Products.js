@@ -42,7 +42,8 @@ const Products = () => {
     filteredProductsCount,
   } = useSelector((state) => state.products);
 
-  const keyword = useParams();
+  const params = useParams();
+  const {keyword} = params;
 
   const setCurrentPageNo = (e) => {
     setCurrentPage(e);

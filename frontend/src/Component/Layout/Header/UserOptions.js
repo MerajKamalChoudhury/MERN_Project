@@ -7,35 +7,35 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import PersonIcon from '@mui/icons-material/Person';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import ListAltIcon from '@mui/icons-material/ListAlt';
-// import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { useNavigate,withRouter } from "react-router-dom";
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { logout } from "../../../actions/userAction";
 import { useDispatch, useSelector } from "react-redux";
-// import { useNavigate } from "react-router-dom";
+
 
 const UserOptions = ({ user }) => {
-  // const { cartItems } = useSelector((state) => state.cart);
+  const { cartItems } = useSelector((state) => state.cart);
 
   const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
-  const history = useNavigate();
+  
   const alert = useAlert();
   const dispatch = useDispatch();
 
   const options = [
     { icon: <ListAltIcon />, name: "Orders", func: orders },
     { icon: <PersonIcon />, name: "Profile", func: account },
-    // {
-    //   icon: (
-    //     <ShoppingCartOutlinedIcon
-    //       style={{ color: cartItems.length > 0 ? "tomato" : "unset" }}
-    //     />
-    //   ),
-    //   name: `Cart(${cartItems.length})`,
-    //   func: cart,
-    // },
+    {
+      icon: (
+        <ShoppingCartOutlinedIcon
+          style={{ color: cartItems.length > 0 ? "tomato" : "unset" }}
+        />
+      ),
+      name: `Cart(${cartItems.length})`,
+      func: cart,
+    },
     { icon: <ExitToAppIcon />, name: "Logout", func: logoutUser },
   ];
 
@@ -48,18 +48,18 @@ const UserOptions = ({ user }) => {
   }
 
   function dashboard() {
-    navigate("/admin/dashboard");
+    navigate("/admin/dashboard")
   }
 
   function orders() {
-    history.push("/orders");
+    navigate("/orders")
   }
   function account() {
-    navigate("/account");
+    navigate("/account")
   }
-  // function cart() {
-  //   history.push("/cart");
-  // }
+  function cart() {
+    navigate("/cart")
+  }
   function logoutUser() {
     dispatch(logout());
     alert.success("Logout Successfully");

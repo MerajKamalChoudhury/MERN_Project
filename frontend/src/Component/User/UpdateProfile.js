@@ -1,13 +1,14 @@
 import React, { Fragment, useState, useEffect } from "react";
 import "./UpdateProfile.css";
-import Loader from "../layout/Loader/Loader";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import FaceIcon from "@material-ui/icons/Face";
+import Loader from "../Layout/Loader/Loader";
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import FaceIcon from '@mui/icons-material/Face';
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, updateProfile, loadUser } from "../../actions/userAction";
 import { useAlert } from "react-alert";
 import { UPDATE_PROFILE_RESET } from "../../constants/userConstants";
-import MetaData from "../layout/MetaData";
+import MetaData from "../Layout/Metadata";
+import { redirect } from "react-router-dom";
 
 const UpdateProfile = ({ history }) => {
   const dispatch = useDispatch();
@@ -61,7 +62,7 @@ const UpdateProfile = ({ history }) => {
       alert.success("Profile Updated Successfully");
       dispatch(loadUser());
 
-      history.push("/account");
+      redirect("/account");
 
       dispatch({
         type: UPDATE_PROFILE_RESET,
